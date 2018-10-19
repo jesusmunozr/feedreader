@@ -22,6 +22,7 @@ var allFeeds = [
         url: 'http://feeds.feedburner.com/udacity-linear-digressions'
     }
 ];
+var loadFeedsComplete = false;
 
 /* This function starts up our application. The Google Feed
  * Reader API is loaded asynchonously and will then call this
@@ -69,6 +70,7 @@ function init() {
                      container.append(entryTemplate(entry));
                  });
 
+                 loadFeedsComplete = true;
                  if (cb) {
                      cb();
                  }
